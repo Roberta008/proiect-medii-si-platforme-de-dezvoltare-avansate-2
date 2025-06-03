@@ -1,5 +1,6 @@
 using System.Data.SQLite;
 using System.Windows.Forms;
+using NUnit.Framework;
 using ProiectMPDA.Composite;
 using ProiectMPDA.Database;
 
@@ -62,7 +63,7 @@ namespace ProiectMPDA.Tests
                 new TreeNode(text: storeName),
                 TreeNodeType.STORE_NODE
             );
-            // Trigger workflow rerun
+
             storesQuery.Delete(aditionalParameters: nodePair);
 
             ICompositeItem firstStoreAfterDelete = storesQuery.Select().First();
